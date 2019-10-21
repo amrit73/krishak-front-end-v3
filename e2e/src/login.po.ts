@@ -19,4 +19,4 @@ export class LoginPage {
   clickLogin(){
     return element(by.css('#btn-login')).click();
   }
-}
+} 
