@@ -1,17 +1,26 @@
-import { AppPage } from './app.po';
+import { SignupPage } from './signup.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('Go to Signup page', () => {
+  let page: SignupPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new SignupPage();
   });
 
-  it('should display welcome message', () => {
+  it('When I on on signp page', () => {
     page.navigateTo();
-    // expect(page.getTitleText()).toEqual('test-app2 app is running!');
-    page.setInputText();
+  });
+
+  
+  it('When I enter username and password', () => {
+    page.setUsername();
+    page.setPassword();
+  });
+
+  
+  it('Then  I should be signup in', () => {
+    page.clickLogin();
   });
 
   afterEach(async () => {
