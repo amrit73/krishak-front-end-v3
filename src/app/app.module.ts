@@ -31,12 +31,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 
 import { ProductsComponent } from './products/products.component';
-import { AddproductsComponent } from './addproducts/addproducts.component';
-
-
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { CommonModule } from '@angular/common';
-import { AddProfuctsComponent } from './add-profucts/add-profucts.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 
 @NgModule({
@@ -48,9 +43,7 @@ import { AddProductsComponent } from './add-products/add-products.component';
     IndexComponent,
     SignupComponent,
     ProductsComponent,
-    AddproductsComponent,
     SidenavComponent,
-    AddProfuctsComponent,
     AddProductsComponent
   ],
   imports: [
