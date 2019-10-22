@@ -32,7 +32,7 @@ import {MatCardModule} from '@angular/material/card';
 
 import { ProductsComponent } from './products/products.component';
 import { AddproductsComponent } from './addproducts/addproducts.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
