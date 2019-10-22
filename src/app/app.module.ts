@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatExpansionModule, MatSortModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
@@ -23,6 +23,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
+import { ProductsComponent } from './products/products.component';
+import { AddproductsComponent } from './addproducts/addproducts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import {MatCardModule} from '@angular/material/card';
     TestComponent,
     LoginComponent,
     IndexComponent,
-    SignupComponent
+    SignupComponent,
+    ProductsComponent,
+    AddproductsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,16 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    MatListModule
+    MatListModule, 
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
