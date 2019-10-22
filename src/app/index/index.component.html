@@ -9,7 +9,7 @@
                         <mat-icon>my_location</mat-icon>{{product.availableLocation}}
                     </p>
                 </mat-card>
-                <button id="cart-id" class="cart-btn" mat-fab>
+                <button [routerLink]="['/cart', { id:product._id }]" id="cart-id" class="cart-btn" mat-fab>
                     <mat-icon>add_shopping_cart
                     </mat-icon>
                 </button>
