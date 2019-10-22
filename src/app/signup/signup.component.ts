@@ -53,7 +53,7 @@ registerUser(name: any,username: any,email: any,phone: any,location: any,company
       $.ajax({
         type: 'POST',
         url: base_url + 'register',
-        data,
+        data:data,
         success: function () {
           alert('Success')
         },
