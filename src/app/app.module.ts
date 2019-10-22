@@ -32,7 +32,6 @@ import {MatCardModule} from '@angular/material/card';
 
 import { ProductsComponent } from './products/products.component';
 import { AddproductsComponent } from './addproducts/addproducts.component';
-import { HttpClientModule } from '@angular/common/http';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
@@ -63,7 +62,6 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -72,7 +70,8 @@ import { CommonModule } from '@angular/common';
     MatGridListModule,
     MatButtonModule,
     FormsModule,                               
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
