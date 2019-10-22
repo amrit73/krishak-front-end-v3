@@ -1,0 +1,50 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+  
+  .dashboard-pannel-head {
+    align-items: center;
+    justify-content: space-between;
+    color: #FAFAFA;
+    background-color: rgb(34, 32, 32);
+  }
+  
+  .example-sidenav {
+    background-color: rgb(173, 136, 68);
+    color: #FAFAFA;
+  }
+  
+  .nav-menu-items {
+    flex: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: #FAFAFA;
+  }
+  
+  .nav-menu-items :hover {
+    cursor: pointer;
+    background-color: rgb(85, 85, 85);
+  }
+  
+  .nav-toolbar {
+    align-content: center;
+    background-color: rgb(202, 173, 44);
+    justify-content: space-between;
+  }
+  
+  .nav-toolbar p {
+    color: #FAFAFA;
+  }
+  
+  .sidenav-icon {
+    position: relative;
+    margin-right: 10;
+    color: #FAFAFA;
+    cursor: pointer;
+  }
