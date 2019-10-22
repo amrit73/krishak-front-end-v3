@@ -1,60 +1,48 @@
 <div class="login-page">
     <div class="form">
         <div class="login-form">
-            <label for="firstname">Firstname</label>
-            <input type="text" formControlName="username" class="form-control" id="firstname" />
-        </div>
-
-        <div class="login-form">
-            <label for="lastname">Lastname</label>
-            <input type="text" formControlName="lastname" class="form-control" id="lastname" />
+            <label for="firstname">Name</label>
+            <input type="text" name="name" class="form-control" id="name" ngModel #signup_name="ngModel"  />
         </div>
 
         <div class="login-form">
             <label for="username">Username</label>
-            <input type="text" formControlName="username" class="form-control" id="username" />
+            <input type="text" name="username" class="form-control" id="username" ngModel #signup_username="ngModel"  />
         </div>
 
         <div class="login-form">
             <label for="email">Email</label>
-            <input type="text" formControlName="email" class="form-control" id="email" />
+            <input type="text" name="email" class="form-control" id="email" ngModel #signup_email="ngModel"  />
         </div>
 
         <div class="login-form">
             <label for="Phone">Phone</label>
-            <input type="text" formControlName="Phone" class="form-control" id="phone" />
+            <input type="text" name="Phone" class="form-control" id="phone" ngModel #signup_phone="ngModel"  />
         </div>
 
 
         <div class="login-form">
             <label for="Location">Location</label>
-            <input type="text" formControlName="Location" class="form-control" id="location" />
+            <input type="text" name="Location" class="form-control" id="location" ngModel #signup_location="ngModel"  />
         </div>
 
 
         <div class="login-form">
             <label for="Company">Company</label>
-            <input type="text" formControlName="Company" class="form-control" id="Company" />
+            <input type="text" name="Company" class="form-control" id="Company" ngModel #signup_company="ngModel"  />
         </div>
-
-
-
-
-
 
         <div class="login-form">
             <label for="password">Password</label>
-            <input type="password" formControlName="password" class="form-control" id="password" />
+            <input type="password" name="password" class="form-control" id="password" ngModel #signup_password="ngModel" />
         </div>
-
-
 
         <div class="login-form">
 
-            <button class="btn btn-primary" id="btn-login">
+            <button class="btn btn-primary" id="btn-signup" (click)="registerUser(signup_name,signup_username,signup_email,signup_phone,signup_location,signup_company,signup_password)">
             Sign Up
         </button>
-            <p class="message" textsize="20px">Already registered?</p> <a routerLink="['/register']" class="btn btn-link">Login</a>
+            <p class="message" textsize="20px">Already registered?</p> <a routerLink="['/login']" class="btn btn-link">Login</a>
         </div>
     </div>
 </div>
