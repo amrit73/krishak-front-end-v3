@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 
@@ -22,7 +24,10 @@ import { MatPaginatorModule } from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -32,16 +37,21 @@ import {MatCardModule} from '@angular/material/card';
     TestComponent,
     LoginComponent,
     IndexComponent,
-    SignupComponent
+    SignupComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

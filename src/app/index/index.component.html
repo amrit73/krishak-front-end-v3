@@ -1,7 +1,16 @@
 <div>
-    <mat-card class="card-style">
-        Simple card
-        <img src="../../assets/images/Krishak.PNG" alt="image">
-    </mat-card>
+
+
+    <mat-grid-list class="product-list" cols="2" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let product of products">
+            <mat-card class="card-style">
+                <img class="product-image" src="{{product.image}}" alt="image">
+                <p>{{product.availableLocation}}</p>
+            </mat-card>
+            <button mat-fab><mat-icon>add_shopping_cart
+                </mat-icon></button>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
 
 </div>
