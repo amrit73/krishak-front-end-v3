@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -28,6 +30,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -51,7 +54,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatListModule,
     MatSidenavModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,                               // <========== Add this line!
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
