@@ -1,27 +1,55 @@
-<app-sidenav></app-sidenav>
-
-hello
+<input type="file" class="form-control-file mt-2" id="product-image"
+             (change)="handleFileInput($event.target.files)" name="image" ngModel
+             #image="ngModel" hidden/>
 <mat-card-content>
    <form class="my-form">
       <mat-form-field class="full-width">
-             <mat-label>First Name</mat-label>
-             <input  matInput  placeholder="First name"  name="fname"  required>
+             <mat-label>Product Name</mat-label>
+             <input  matInput  placeholder="Product name"  name="productname" id="aaa" required>
           </mat-form-field>
           <mat-form-field class="full-width">
-             <mat-label>Last Name</mat-label>
-             <input  matInput  placeholder="Last Name" name="lname"  required>
+             <mat-label>Category</mat-label>
+             <input  matInput  placeholder="Category" name="category"  required>
+          </mat-form-field>    
+          <mat-form-field class="full-width">
+             <mat-label>Price Per Unit</mat-label>
+             <input  matInput  placeholder="pricePerUnit" name="pricePerUnit"  required>
           </mat-form-field>
           <mat-form-field class="full-width">
-             <mat-label>Address</mat-label>
-             <input  matInput  placeholder="Address" name="address"  required>
+             <mat-label>Description</mat-label>
+             <input  matInput  placeholder="description" name="description">
           </mat-form-field>
           <mat-form-field class="full-width">
-             <mat-label>Email</mat-label>
-             <input  matInput  placeholder="Email" name="email">
+             <mat-label>Discount(%)</mat-label>
+             <input  matInput  placeholder="discount" name="discount">
           </mat-form-field>
           <mat-form-field class="full-width">
-             <mat-label>Password</mat-label>
-             <input  matInput  placeholder="Password"  name="password">
-          </mat-form-field>
+            <mat-label>Available Location</mat-label>
+            <input  matInput  placeholder="availableLocation" name="availableLocation">
+         </mat-form-field>   
+         <mat-form-field class="full-width">
+            <mat-label>Manufactured Location</mat-label>
+            <input  matInput  placeholder="manufacturedLocation" name="manufacturedLocation">
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Quantity</mat-label>
+            <input  matInput  placeholder="quantity" name="quantity">
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Product Expire Data</mat-label>
+            <input  matInput  placeholder="productExpireData" name="productExpireData">
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Uploaded By</mat-label>
+            <input  matInput  placeholder="uploadedBy" name="uploadedBy">
+         </mat-form-field>
+
+         <mat-form-field class="full-width">
+            <input  matInput  placeholder="image-name" name="image-name" id="image-name">
+         </mat-form-field>
+         
+         <mat-card-actions >
+            <button mat-raised-button (click)="onSubmitProduct()" color="primary">Add for sales</button>
+          </mat-card-actions>
    </form>
  </mat-card-content>
