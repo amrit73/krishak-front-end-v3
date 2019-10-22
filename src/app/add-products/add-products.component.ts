@@ -9,9 +9,15 @@ import * as $ from 'jquery';
 })
 export class AddProductsComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  uploadStatus:boolean;
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'http://localhost:90/';
+  base_url = 'http://localhost:90/';
   
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -20,8 +26,8 @@ export class AddProductsComponent implements OnInit {
       this.imageUrl = event.target.result;
     }
     reader.readAsDataURL(this.fileToUpload);
-    $('#img').fadeIn(200);
-    this.uploadImageToServer($('#create-portfolio'));
+    // $('#img').fadeIn(200);
+    this.uploadImageToServer($('#upload'));
   }
 
   uploadImageToServer(imageUploadSelector) {
@@ -38,12 +44,13 @@ export class AddProductsComponent implements OnInit {
     if (fileSize > 10000000) {
       setTimeout(function () {
         alert('Image size exceeds');
+        this.uploadStatus=false;
       }, 2000);
     } else {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + 'products/upload',
+        url: this.base_url + 'upload',
         contentType: false,
         cache: false,
         processData: false,
@@ -51,17 +58,16 @@ export class AddProductsComponent implements OnInit {
         success(data) {
           console.log(data);
           $('#image-name').val(data);
+        this.uploadStatus=true;
+
         },
         error() {
-          
+          alert('Upload failed');
+        this.uploadStatus=false;
+
         }
       });
     }
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
   onSubmitProduct(productname:any,
@@ -78,6 +84,40 @@ export class AddProductsComponent implements OnInit {
     // let data=$('#aaa').val();
     // alert(data);
     // alert(category.value)
+
+    let data= {
+      productName:productname.value,
+      productCategory:category.value,
+      pricePerUnit:pricePerUnit.value,
+      description:description.value,
+      image:imagename.value,
+      discount:discount.value,
+      availableLocation:availableLocation.value,
+      manufacturedLocation:manufacturedLocation.value,
+      quantity:quantity.value,
+      productExpireData:expiredata.value,
+      uploadedBy:uploadedBy.value      
+    }
+
+    console.log(data)
+
+    if (!this.uploadStatus) {
+      alert('Please try again!');
+    }
+    else{
+      $.ajax({
+        type: 'POST',
+        url: this.base_url + 'addmyproduct',
+        data:data,
+        success: function () {
+          alert('Success')
+        },
+        error: function () {
+          alert('error')
+        }
+      });
+    }
+
   }
 
 }
