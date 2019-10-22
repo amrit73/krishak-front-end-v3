@@ -64,9 +64,20 @@ export class AddProductsComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmitProduct(){
-    let data=$('#aaa').val();
-    alert(data);
+  onSubmitProduct(productname:any,
+    category:any,
+    pricePerUnit:any,
+    description:any,
+    discount:any,
+    availableLocation:any,
+    manufacturedLocation:any,
+    quantity:any,
+    expiredata:any,
+    uploadedBy:any,
+    imagename:any){
+    // let data=$('#aaa').val();
+    // alert(data);
+    // alert(category.value)
   }
 
 }

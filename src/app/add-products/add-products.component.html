@@ -4,56 +4,78 @@
    <form class="my-form">
       <mat-form-field class="full-width">
              <mat-label>Product Name</mat-label>
-             <input  matInput  placeholder="Product name"  name="productname" id="aaa" required>
+             <input  matInput  placeholder="Product name"  name="productname" id="product-name" ngModel
+             #productname="ngModel" required>
           </mat-form-field>
           <mat-form-field class="full-width">
              <mat-label>Category</mat-label>
-             <input  matInput  placeholder="Category" name="category"  required>
+             <input  matInput  placeholder="Category" name="category" id="product-category" ngModel
+             #category="ngModel"  required>
           </mat-form-field>    
           <mat-form-field class="full-width">
              <mat-label>Price Per Unit</mat-label>
-             <input  matInput  placeholder="rs." name="pricePerUnit"  required>
+             <input  matInput  placeholder="rs." name="pricePerUnit" id="product-unit" ngModel
+             #pricePerUnit="ngModel" required>
           </mat-form-field>
           <mat-form-field class="full-width">
              <mat-label>Description</mat-label>
-             <input  matInput  placeholder="Description" name="description">
+             <input  matInput  placeholder="Description" name="description" id="product-description" ngModel
+             #description="ngModel" required>
           </mat-form-field>
           <label class="full-width" for="product-image">
                <mat-icon>perm_media</mat-icon> Select Image
           </label>
           <mat-form-field class="full-width">
              <mat-label>Discount(%)</mat-label>
-             <input  matInput  placeholder="%" name="discount">
+             <input  matInput  placeholder="%" name="discount" id="product-discount" ngModel
+             #discount="ngModel" >
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Available Location</mat-label>
-            <input  matInput  placeholder="e.g. Dillibazar, Katmandu" name="availableLocation">
+            <input  matInput  placeholder="e.g. Dillibazar, Katmandu" name="availableLocation" id="product-available-location" ngModel
+            #availableLocation="ngModel">
          </mat-form-field>   
          <mat-form-field class="full-width">
             <mat-label>Manufactured Location</mat-label>
-            <input  matInput  placeholder="e.g. Sanga, Bhaktapur" name="manufacturedLocation">
+            <input  matInput  placeholder="e.g. Sanga, Bhaktapur" name="manufacturedLocation" id="product-manufactured-location" ngModel
+            #manufacturedLocation="ngModel">
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Quantity</mat-label>
-            <input  matInput  placeholder="e.g. 1kg / 1ltr / 1 bundle" name="quantity">
+            <input  matInput  placeholder="e.g. 1kg / 1ltr / 1 bundle" name="quantity" id="product-quantity" ngModel
+            #quantity="ngModel">
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Product Expire Data</mat-label>
-            <input matInput [matDatepicker]="myDatepicker">
+            <input matInput [matDatepicker]="myDatepicker" name="expiredata" id="product-expire-data" ngModel
+            #expiredata="ngModel">
             <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #myDatepicker></mat-datepicker>
+            <mat-datepicker #myDatepicker id="myDatepicker"></mat-datepicker>
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Uploaded By</mat-label>
-            <input  matInput  placeholder="uploadedBy" name="uploadedBy">
+            <input  matInput  placeholder="uploadedBy" name="uploadedBy" id="product-uploaded-by" ngModel
+            #uploadedBy="ngModel">
          </mat-form-field>
 
          <mat-form-field class="full-width">
-            <input  matInput  placeholder="image-name" name="image-name" id="image-name">
+            <input  matInput  placeholder="image-name" name="image-name" id="image-name" ngModel
+            #imagename="ngModel">
          </mat-form-field>
 
          <mat-card-actions >
-            <button mat-raised-button (click)="onSubmitProduct()" color="primary">Add for sales</button>
+            <button mat-raised-button (click)="onSubmitProduct(
+               productname,
+               category,
+               pricePerUnit,
+               description,
+               discount,
+               availableLocation,
+               manufacturedLocation,
+               quantity,
+               expiredata,
+               uploadedBy,
+               imagename)" color="primary">Add for sales</button>
           </mat-card-actions>
    </form>
  </mat-card-content>
