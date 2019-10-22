@@ -36,6 +36,8 @@ import { AddproductsComponent } from './addproducts/addproducts.component';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
+import { AddProfuctsComponent } from './add-profucts/add-profucts.component';
+import { AddProductsComponent } from './add-products/add-products.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { CommonModule } from '@angular/common';
     SignupComponent,
     ProductsComponent,
     AddproductsComponent,
-    SidenavComponent
+    SidenavComponent,
+    AddProfuctsComponent,
+    AddProductsComponent
   ],
   imports: [
     BrowserModule,
