@@ -1,6 +1,5 @@
 <input type="file" class="form-control-file mt-2" id="product-image"
-             (change)="handleFileInput($event.target.files)" name="image" ngModel
-             #image="ngModel" hidden/>
+             (change)="handleFileInput($event.target.files)" name="image" hidden/>
 <mat-card-content>
    <form class="my-form">
       <mat-form-field class="full-width">
@@ -13,31 +12,36 @@
           </mat-form-field>    
           <mat-form-field class="full-width">
              <mat-label>Price Per Unit</mat-label>
-             <input  matInput  placeholder="pricePerUnit" name="pricePerUnit"  required>
+             <input  matInput  placeholder="rs." name="pricePerUnit"  required>
           </mat-form-field>
           <mat-form-field class="full-width">
              <mat-label>Description</mat-label>
-             <input  matInput  placeholder="description" name="description">
+             <input  matInput  placeholder="Description" name="description">
           </mat-form-field>
+          <label class="full-width" for="product-image">
+               <mat-icon>perm_media</mat-icon> Select Image
+          </label>
           <mat-form-field class="full-width">
              <mat-label>Discount(%)</mat-label>
-             <input  matInput  placeholder="discount" name="discount">
+             <input  matInput  placeholder="%" name="discount">
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Available Location</mat-label>
-            <input  matInput  placeholder="availableLocation" name="availableLocation">
+            <input  matInput  placeholder="e.g. Dillibazar, Katmandu" name="availableLocation">
          </mat-form-field>   
          <mat-form-field class="full-width">
             <mat-label>Manufactured Location</mat-label>
-            <input  matInput  placeholder="manufacturedLocation" name="manufacturedLocation">
+            <input  matInput  placeholder="e.g. Sanga, Bhaktapur" name="manufacturedLocation">
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Quantity</mat-label>
-            <input  matInput  placeholder="quantity" name="quantity">
+            <input  matInput  placeholder="e.g. 1kg / 1ltr / 1 bundle" name="quantity">
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Product Expire Data</mat-label>
-            <input  matInput  placeholder="productExpireData" name="productExpireData">
+            <input matInput [matDatepicker]="myDatepicker">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Uploaded By</mat-label>
@@ -47,7 +51,7 @@
          <mat-form-field class="full-width">
             <input  matInput  placeholder="image-name" name="image-name" id="image-name">
          </mat-form-field>
-         
+
          <mat-card-actions >
             <button mat-raised-button (click)="onSubmitProduct()" color="primary">Add for sales</button>
           </mat-card-actions>

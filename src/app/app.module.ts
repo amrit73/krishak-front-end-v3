@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule, MatInputModule, MatExpansionModule, MatSortModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatExpansionModule, MatSortModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
@@ -69,9 +69,13 @@ import { AddProductsComponent } from './add-products/add-products.component';
     MatGridListModule,
     MatButtonModule,
     FormsModule,                               
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule   
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
