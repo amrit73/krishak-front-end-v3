@@ -32,6 +32,7 @@ export class AddProductsComponent implements OnInit {
 
   uploadImageToServer(imageUploadSelector) {
     console.log(imageUploadSelector);
+
     const formData = new FormData();
     const files = imageUploadSelector.get(0).files;
     if (files.length > 0) {
