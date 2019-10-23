@@ -27,7 +27,7 @@ export class AddProductsComponent implements OnInit {
     }
     reader.readAsDataURL(this.fileToUpload);
     // $('#img').fadeIn(200);
-    this.uploadImageToServer($('#upload'));
+    this.uploadImageToServer($('#product-image'));
   }
 
   uploadImageToServer(imageUploadSelector) {
