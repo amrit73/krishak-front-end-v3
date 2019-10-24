@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule, MatInputModule, MatExpansionModule, MatSortModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatExpansionModule, MatSortModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
@@ -31,6 +31,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 
 import { ProductsComponent } from './products/products.component';
+
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -38,6 +40,7 @@ import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +51,7 @@ import { FilteredproductsComponent } from './filteredproducts/filteredproducts.c
     IndexComponent,
     SignupComponent,
     ProductsComponent,
+    SidenavComponent,
     AddProductsComponent,
     SidenavComponent,
     CartComponent,
@@ -76,10 +80,15 @@ import { FilteredproductsComponent } from './filteredproducts/filteredproducts.c
     MatGridListModule,
     MatButtonModule,
     FormsModule,                               
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule   
+  ],
+  providers: [
+    MatDatepickerModule
     ReactiveFormsModule ,
     MatDialogModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

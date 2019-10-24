@@ -4,8 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProductsComponent } from './products/products.component';
+
+import { AddProductsComponent } from './add-products/add-products.component';
 import { CartComponent } from './cart/cart.component';
-import { AddproductsComponent } from './addproducts/addproducts.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 
 
@@ -23,6 +24,11 @@ const routes: Routes = [
     component: CartComponent
   },
   {
+    path:'items',
+    component:ProductsComponent
+  },
+  {
+    
     path: 'signup',
     component: SignupComponent
   },
@@ -32,7 +38,7 @@ const routes: Routes = [
   },
   {
     path:'additems',
-    component:AddproductsComponent
+    component:AddProductsComponent
   },
   {
     path:'list/:id',
