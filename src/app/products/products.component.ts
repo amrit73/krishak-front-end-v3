@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductsService, private BASE_URL: ProductsService) {
   }
 
-  displayedColumns: string[] = ['name', 'date', 'image', 'actions'];
+  displayedColumns: string[] = ['productName', 'productCategory', 'pricePerUnit', 'description','discount','quantity','availableLocation','manufacturedLocation','productExpireData','uploadedBy'];
   dataSource = new MatTableDataSource(this.products);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -30,7 +30,9 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.productService.getData().subscribe(res => this.dataSource.data = res['data']);
+    return this.productService.getData().subscribe((data: any[])=>{
+      this.dataSource=data[0].data;
+    });
 
   }
 
