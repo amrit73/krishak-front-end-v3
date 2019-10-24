@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { ProductsService } from './products.service';
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -29,15 +30,20 @@ export class ProductsComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
+
+
   ngOnInit() {
     return this.productService.getData().subscribe((data: any[])=>{
       this.dataSource=data[0].data;
     });
+
 
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+
 
 }

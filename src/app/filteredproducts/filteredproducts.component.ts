@@ -5,11 +5,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: 'app-filteredproducts',
+  templateUrl: './filteredproducts.component.html',
+  styleUrls: ['./filteredproducts.component.css']
 })
-export class IndexComponent implements OnInit {
+export class FilteredproductsComponent implements OnInit {
+
 
   private productwa$
   products: Products[];
@@ -23,39 +24,20 @@ export class IndexComponent implements OnInit {
     });
   }
 
-  populateProducts() {
-    // this.ps.getProductes()
-    //   .switchMap(products => {
-    //     this.products = products;
-    //     console.log(products);
-    //     return this.route.queryParamMap;
-    //   })
-    //   .subscribe(params => {
-    //     this.category = params.get('category');
-    //     this.applyCatFilter();
-    //   });
-
-
-
-  }
+  
 
   ngOnInit() {
     this.ps
-      .getProductes()
+      .find(this.category)
       .subscribe((data: Products[]) => {
         console.log(data)
         this.products = data;
         // this.applyCatFilter()
       });
 
-    
+  
 
   }
 
-  private applyCatFilter() {
-    console.log(this.category)
-    this.filteredProducts = (this.category) ?
-      this.products.filter(p => p.productCategory === this.category) : this.products;
-  }
-
+ 
 }
