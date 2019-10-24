@@ -6,33 +6,73 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
 </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" class="w-100">
-
-  <ng-container matColumnDef="name">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" class="w-100" >
+  <ng-container matColumnDef="productName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Name</th>
-    <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+    <td mat-cell *matCellDef="let element"> {{element.productName}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
-    <td mat-cell *matCellDef="let element"> {{element.date}}</td>
+  <ng-container matColumnDef="productCategory">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+    <td mat-cell *matCellDef="let element"> {{element.productCategory}}</td>
   </ng-container>
 
-  <ng-container matColumnDef="image">
+  <ng-container matColumnDef="pricePerUnit">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Price/unit</th>
+    <td mat-cell *matCellDef="let element"> {{element.pricePerUnit}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+    <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="discount">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Discount</th>
+    <td mat-cell *matCellDef="let element"> {{element.discount}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+    <td mat-cell *matCellDef="let element"> {{element.quantity}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="availableLocation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Available Location</th>
+    <td mat-cell *matCellDef="let element"> {{element.availableLocation}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="manufacturedLocation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Manufactured Location</th>
+    <td mat-cell *matCellDef="let element"> {{element.manufacturedLocation}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="productExpireData">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Expire Data</th>
+    <td mat-cell *matCellDef="let element"> {{element.productExpireData}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="uploadedBy">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Uploaded By</th>
+    <td mat-cell *matCellDef="let element"> {{element.uploadedBy}}</td>
+  </ng-container>
+
+
+  <!-- <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
     <td mat-cell *matCellDef="let element" style="width: 25%"><img
       [src]="baseurl+'UPLOADS/images/clients/'+element.image" class="w-100 img-fluid img-thumbnail">
     </td>
-  </ng-container>
+  </ng-container> -->
 
-  <ng-container matColumnDef="actions">
+  <!-- <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions</th>
     <td mat-cell *matCellDef="let element">
       <button class="btn btn-danger" (click)="deleteById(element.id,element.image)"><i
         class="fa fa-trash"></i>
       </button>
     </td>
-  </ng-container>
+  </ng-container> -->
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

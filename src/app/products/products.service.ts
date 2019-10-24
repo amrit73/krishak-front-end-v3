@@ -6,16 +6,13 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductsService {
-  BASE_URL: string = 'http://localhost:90/' + 'getproducts';
+  BASE_URL: string = 'http://localhost:90/productslist';
 
   constructor(private http: HttpClient) {
   }
 
   getData() {
-    return this.http.get(this.BASE_URL).pipe(
-      tap(_ => this.log('data')),
-      catchError(this.handleError())
-    );
+    return this.http.get(this.BASE_URL);
   }
 
   public publishBaseUrl() {
