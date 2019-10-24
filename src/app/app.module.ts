@@ -31,13 +31,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 
 import { ProductsComponent } from './products/products.component';
-import { AddproductsComponent } from './addproducts/addproducts.component';
-
+import { AddProductsComponent } from './add-products/add-products.component';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
-import { AddProfuctsComponent } from './add-profucts/add-profucts.component';
-import { AddProductsComponent } from './add-products/add-products.component';
+import { CartComponent } from './cart/cart.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +48,11 @@ import { AddProductsComponent } from './add-products/add-products.component';
     IndexComponent,
     SignupComponent,
     ProductsComponent,
-    AddproductsComponent,
+    AddProductsComponent,
     SidenavComponent,
-    AddProfuctsComponent,
-    AddProductsComponent
+    CartComponent,
+    CategoriesComponent,
+    FilteredproductsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +68,6 @@ import { AddProductsComponent } from './add-products/add-products.component';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -76,7 +76,8 @@ import { AddProductsComponent } from './add-products/add-products.component';
     MatGridListModule,
     MatButtonModule,
     FormsModule,                               
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

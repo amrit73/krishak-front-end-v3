@@ -1,4 +1,4 @@
-export default class Product {
+export class ProductEntity {
     _id:String
     productName: String;
     productCategory: String;

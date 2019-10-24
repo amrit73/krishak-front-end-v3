@@ -18,43 +18,43 @@ export class ProductsService {
       Product_gst_number: Product_gst_number
     };
     this.http.post(`${this.uri}/add`, obj)
-        .subscribe(res => console.log('Done'));
+      .subscribe(res => console.log('Done'));
   }
 
   getProductes() {
     return this
-           .http
-           .get(`${this.uri}/productslist`);
+      .http
+      .get(`${this.uri}/productslist`);
   }
 
-  getVersion() {
-    return this
-           .http
-           .get(`${this.versionuri}`);
+  find(id) {
+    return this.
+      http
+      .get(`${this.uri}/filterlist/${id}`);
   }
 
   editProduct(id) {
     return this
-            .http
-            .get(`${this.uri}/edit/${id}`);
-    }
+      .http
+      .get(`${this.uri}/edit/${id}`);
+  }
 
   updateProduct(person_name, Product_name, Product_gst_number, id) {
 
     const obj = {
-        person_name: person_name,
-        Product_name: Product_name,
-        Product_gst_number: Product_gst_number
-      };
+      person_name: person_name,
+      Product_name: Product_name,
+      Product_gst_number: Product_gst_number
+    };
     this
       .http
       .post(`${this.uri}/update/${id}`, obj)
       .subscribe(res => console.log('Done'));
   }
 
- deleteProduct(id) {
+  deleteProduct(id) {
     return this
-              .http
-              .get(`${this.uri}/delete/${id}`);
+      .http
+      .get(`${this.uri}/delete/${id}`);
   }
 }

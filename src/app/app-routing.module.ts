@@ -4,24 +4,39 @@ import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component';
+import { AddproductsComponent } from './addproducts/addproducts.component';
+import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: IndexComponent
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path:'signup',
-    component:SignupComponent
+    path: 'cart',
+    component: CartComponent
   },
   {
-    path:'items',
-    component:ProductsComponent
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'items',
+    component: ProductsComponent
+  },
+  {
+    path:'additems',
+    component:AddproductsComponent
+  },
+  {
+    path:'list/:id',
+    component:FilteredproductsComponent
   }
 ];
 

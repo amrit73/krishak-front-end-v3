@@ -2,40 +2,24 @@
     <mat-drawer #drawer class="example-sidenav" mode="side" opened>
         <mat-toolbar class="dashboard-pannel-head">
             <h2>Krishak</h2>
+            <div class="sidenav-icon">
+                <mat-icon routerLink="/cart">shopping_cart
+                </mat-icon>
+            </div>
         </mat-toolbar>
 
 
-        <mat-nav-list class="nav-menu-items">
-            <a mat-list-item routerLink="/home">
-                <mat-icon>apps</mat-icon>
-                <h2>Categories</h2>
-            </a>
-            <a mat-list-item routerLink="/home">
-                <mat-icon>apps</mat-icon>
-                Fruits
-            </a>
-            <a mat-list-item routerLink="/home">
-                <mat-icon>emoji_food_beverage
-                </mat-icon>
-                Bakery
-            </a>
-            <a mat-list-item routerLink="/home">
-                <mat-icon>apps</mat-icon>
-                Vegetables
-            </a>
 
-        </mat-nav-list>
+        <app-categories [category]='category'></app-categories>
 
     </mat-drawer>
 
 
     <mat-toolbar class="nav-toolbar">
-        <div class="sidenav-icon">
-            <mat-icon routerLink="/cart">shopping_cart
-            </mat-icon>
-        </div>
+
         <p class="nav-toolbar">
-            <mat-icon>store</mat-icon>Bazzar</p>
+            <mat-icon>store</mat-icon>Bazzar
+        </p>
         <a mat-list-item routerLink="/login">
             <mat-icon>lock</mat-icon>
             Login
