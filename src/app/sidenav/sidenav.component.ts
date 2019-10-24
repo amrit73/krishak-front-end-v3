@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  category=[
-    "Fruit","Vegetable","Dairy Products","Animal Products"
-  ]
-
-  constructor() { }
+  category: string;
+  
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.category = params['category'];
+    });
+   }
 
   ngOnInit() {
-    this.category
+    
   }
 
 }

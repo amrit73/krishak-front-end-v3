@@ -10,12 +10,7 @@
 
 
 
-        <mat-nav-list class="nav-menu-items">
-            <a *ngFor="let category of category" mat-list-item routerLink="/home">
-                <mat-icon>apps</mat-icon>
-                <h2>{{category}}</h2>
-            </a>
-        </mat-nav-list>
+        <app-categories [category]='category'></app-categories>
 
     </mat-drawer>
 

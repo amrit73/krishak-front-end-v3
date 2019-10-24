@@ -1,0 +1,22 @@
+<div>
+
+    <mat-grid-list class="product-list" cols="2" rowHeight="2:1">
+        <mat-grid-tile id="card-container" *ngFor="let product of products">
+            
+                <mat-card class="card-style">
+                    <img class="product-image" src="{{product.image}}" alt="image" />
+                    <p>
+                        <mat-icon>my_location</mat-icon>{{product.availableLocation}}
+                    </p>
+                </mat-card>
+                <button [routerLink]="['/cart', { id:product._id }]" id="cart-id" class="cart-btn" mat-fab>
+                    <mat-icon>add_shopping_cart
+                    </mat-icon>
+                </button>
+
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+</div>

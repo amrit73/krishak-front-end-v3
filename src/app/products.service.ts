@@ -28,10 +28,9 @@ export class ProductsService {
   }
 
   find(id) {
-
     return this.
       http
-      .get(`${this.uri}/${id}`);
+      .get(`${this.uri}/filterlist/${id}`);
   }
 
   editProduct(id) {
