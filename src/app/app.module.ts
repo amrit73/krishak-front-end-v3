@@ -31,7 +31,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 
 import { ProductsComponent } from './products/products.component';
-import { AddproductsComponent } from './addproducts/addproducts.component';
+import { AddProductsComponent } from './add-products/add-products.component';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CommonModule } from '@angular/common';
@@ -48,7 +48,7 @@ import { FilteredproductsComponent } from './filteredproducts/filteredproducts.c
     IndexComponent,
     SignupComponent,
     ProductsComponent,
-    AddproductsComponent,
+    AddProductsComponent,
     SidenavComponent,
     CartComponent,
     CategoriesComponent,
