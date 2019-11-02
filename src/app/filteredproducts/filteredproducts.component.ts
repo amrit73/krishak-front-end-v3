@@ -22,9 +22,11 @@ export class FilteredproductsComponent implements OnInit {
       this.category = params['category'];
       //  console.log(this.category); // Print the parameter to the console. 
     });
+    
+    
   }
 
-  
+
 
   ngOnInit() {
     this.ps
@@ -32,12 +34,25 @@ export class FilteredproductsComponent implements OnInit {
       .subscribe((data: Products[]) => {
         console.log(data)
         this.products = data;
-        // this.applyCatFilter()
+        
       });
 
-  
+    // this.ps.find(this.category)
+    //   .switchMap(products => {
+    //     this.products = products;
+    //     console.log(products);
+    //     return this.route.queryParamMap;
+    //   })
+    //   .subscribe(params => {
+    //     this.category = params.get('category');
+    //     this.applyCatFilter();
+    //   });
+
 
   }
 
- 
+
 }
+
+
+

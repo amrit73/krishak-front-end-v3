@@ -5,7 +5,7 @@
     </a> -->
     <a class="nav-menu-items" mat-list-item routerLink="/" [class.active]="!category">All Categories</a>
 
-    <a mat-list-item *ngFor="let c of categories$ | async" routerLink="/list/{{c.name}}" [queryParams]="{ category: c.name }"
+    <a (click)="reloadThat(c.name)" mat-list-item *ngFor="let c of categories$ | async" routerLink="/list/{{c.name}}" [queryParams]="{ category: c.name }"
         [class.active]="category === c.name" class="nav-menu-items">
         {{ c.name }}
     </a>

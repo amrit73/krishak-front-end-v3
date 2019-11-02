@@ -5,7 +5,6 @@ import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProductsComponent } from './products/products.component';
 
-import { AddProductsComponent } from './add-products/add-products.component';
 import { CartComponent } from './cart/cart.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 import { AddProductsComponent } from './add-products/add-products.component';
@@ -47,8 +46,9 @@ const routes: Routes = [
   }
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

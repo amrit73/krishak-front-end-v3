@@ -1,5 +1,5 @@
 export class ProductEntity {
-    _id:String
+    _id: String;
     productName: String;
     productCategory: String;
     pricePerUnit: String;
