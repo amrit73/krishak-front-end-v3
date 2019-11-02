@@ -13,7 +13,7 @@ import { ProductsService } from '../products.service';
 
 export class CartComponent implements OnInit {
 
-  private itoms: Item[] = [];
+  private items: Item[] = [];
   private total: number = 0;
   prod: ProductEntity[];
 
@@ -82,13 +82,13 @@ export class CartComponent implements OnInit {
 
   loadCart(): void {
     this.total = 0;
-    this.itoms = [];
+    this.items = [];
     let cart = JSON.parse(localStorage.getItem('cart'));
 
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
       console.log(item.product[0].pricePerUnit)
-      this.itoms.push({
+      this.items.push({
         product: item.product[0],
         quantity: item.quantity
       });
