@@ -31,7 +31,7 @@ export class FilteredproductsComponent implements OnInit {
   ngOnInit() {
     this.ps
       .find(this.category)
-      .subscribe((data: Products[]) => {
+      .subscribe((data: any[]) => {
         console.log(data)
         this.products = data;
         

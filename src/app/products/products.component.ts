@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
   imageUrl: string;
 
   constructor(private productService: ProductsService, private BASE_URL: ProductsService) {
+    
   }
 
   displayedColumns: string[] = ['productName', 'productCategory', 'pricePerUnit', 'description','discount','quantity','availableLocation','manufacturedLocation','productExpireData','uploadedBy','image','actions'];
@@ -33,9 +34,9 @@ export class ProductsComponent implements OnInit {
 
 
   ngOnInit() {
-    return this.productService.getData().subscribe((data: any)=>{
+    return this.productService.getData().subscribe((data: any[])=>{
       
-      this.dataSource=data;
+      this.dataSource=data[0].data;
       console.log(this.dataSource)
     });
 

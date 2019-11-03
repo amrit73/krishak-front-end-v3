@@ -20,11 +20,14 @@ export class CartComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductsService
-  ) { }
+  ) { 
+
+  }
 
 
 
   ngOnInit() {
+    localStorage.setItem("last_track","");
     this.activatedRoute.params.subscribe(params => {
       var id = params['id'];
 
@@ -111,5 +114,14 @@ export class CartComponent implements OnInit {
     this.loadCart();
   }
 
+  checkout(){
+    var token = localStorage.getItem("success_login");
+    if(token){
+      window.location.href = '/checkout';
+    }else{
+      localStorage.setItem("last_track","carting");
+      window.location.href = '/login';
+    }
+  }
 
 }

@@ -42,9 +42,9 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     this.ps
       .getProductes()
-      .subscribe((data: Products[]) => {
-        console.log(data)
-        this.products = data;
+      .subscribe((data: any[]) => {
+        console.log(data[0])
+        this.products = data[0].data;;
         // this.applyCatFilter()
       });
 

@@ -41,6 +41,7 @@ import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { FilteredproductsComponent } from './filteredproducts/filteredproducts.c
     SidenavComponent,
     CartComponent,
     CategoriesComponent,
-    FilteredproductsComponent
+    FilteredproductsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

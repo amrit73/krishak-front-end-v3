@@ -13,36 +13,42 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  getLoggedin(username:any, password:any){
- Validit:Boolean;
+  getLoggedin(username: any, password: any) {
+    Validit: Boolean;
 
 
-    if (username=='' || password=='') {
+    if (username == '' || password == '') {
       alert('Invalid credintials');
-  }
-  else {
-  $.ajax({
-    url: 'http://localhost:90/login',
-    type: 'POST',
-    data: {
-      username: username.value,
-      password: password.value
-    },
-    success: function (data) {
-      if (data.success == true) {
-        alert('welcome');
-        window.location.href = '/admin';
-        localStorage.setItem('success_login', 'session_verified');
-      }
-      else{
-        alert('Invalid credintials');
-      }
-    },
-    error: function (err) {
-     alert('Something went wrong');
     }
-  })
-}
+    else {
+      $.ajax({
+        url: 'http://localhost:90/login',
+        type: 'POST',
+        data: {
+          username: $("#username").val(),
+          password: $("#password").val()
+        },
+        success: function (data) {
+          if (data.success == true) {
+            alert('welcome');
+            console.log(data)
+            localStorage.setItem('success_login', data.token);
+            var track = localStorage.getItem("last_track");
+            if (track == 'carting') {
+              window.location.href = '/cart';
+            } else {
+              window.location.href = '/items';
+            }
+          }
+          else {
+            alert('Invalid credintials');
+          }
+        },
+        error: function (err) {
+          alert('Something went wrong');
+        }
+      })
+    }
 
   }
 
