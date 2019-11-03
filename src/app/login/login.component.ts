@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     }
     else {
       $.ajax({
-        url: 'http://localhost:90/login',
+        url: 'http://localhost:90/login', 
         type: 'POST',
         data: {
           username: $("#username").val(),

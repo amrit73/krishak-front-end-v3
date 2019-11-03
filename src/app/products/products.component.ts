@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { ProductsService } from './products.service';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-products',
@@ -47,9 +47,29 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  deleteById(id,image){
-    alert(id.value);
-    alert(image.value);
+  deleteById(id:any,image:any,index:any){
+    
+    var confirmDelete = confirm('Are you sure to delete ?');
+
+    if (confirmDelete) {
+      $.ajax({
+        type: 'DELETE',
+        url: 'http://localhost:90/delete',
+        data: {
+          id,
+          image
+        },
+        success(data) {
+         alert('Item deleted');
+        },
+        error() {
+
+         alert('Delete Failed!!');
+
+        }
+      });
+
+    }
   }
 
 }
