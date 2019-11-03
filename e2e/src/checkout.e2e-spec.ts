@@ -1,31 +1,29 @@
-import { SignupPage } from './signup.po';
+import { CheckoutPage } from './checkout.po';
 import { browser, logging } from 'protractor';
 
-describe('Go to Signup page', () => {
-  let page: SignupPage;
+describe('Go to Checkout page', () => {
+  let page: CheckoutPage;
 
   beforeEach(() => {
-    page = new SignupPage();
+    page = new CheckoutPage();
   });
 
-  it('When I am on signup page', () => {
+  it('When I go on checkout page', () => {
     page.navigateTo();
   });
 
   
-  it('When I enter username and password', () => {
-    page.setName();
+  it('When I enter name, credit card number, month, year and cvv', () => {
     page.setUsername();
-    page.setEmail();
-    page.setPhone();
-    page.setLocation();
-    page.setPassword();
-
+    page.setNum();
+    page.setMonth();
+    page.setYear();
+    page.setCVV();
   });
 
   
-  it('Then  I should be signup', () => {
-    page.clickLogin();
+  it('Then  Checkout', () => {
+    // page.clickLogin();
   });
 
   afterEach(async () => {

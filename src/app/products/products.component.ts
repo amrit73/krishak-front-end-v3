@@ -35,7 +35,6 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     return this.productService.getData().subscribe((data: any[])=>{
-      
       this.dataSource=data[0].data;
       console.log(this.dataSource)
     });
@@ -48,5 +47,9 @@ export class ProductsComponent implements OnInit {
   }
 
 
+  deleteById(id,image){
+    alert(id.value);
+    alert(image.value);
+  }
 
 }

@@ -9,35 +9,35 @@
       <mat-form-field class="full-width">
              <mat-label>Product Name</mat-label>
              <input  matInput  placeholder="Product name"  name="productname" id="product-name" ngModel
-             #productname="ngModel" required>
+             #productname="ngModel" id="productnamee"  >
           </mat-form-field>
           <mat-form-field class="full-width">
              <mat-label>Category</mat-label>
              <input  matInput  placeholder="Category" name="category" id="product-category" ngModel
-             #category="ngModel"  required>
+             #category="ngModel"   id="productcategory">
           </mat-form-field>    
           <mat-form-field class="full-width">
              <mat-label>Price Per Unit</mat-label>
              <input  matInput  placeholder="rs." name="pricePerUnit" id="product-unit" ngModel
-             #pricePerUnit="ngModel" required>
+             #pricePerUnit="ngModel" id="productunit" >
           </mat-form-field>
           <mat-form-field class="full-width">
              <mat-label>Description</mat-label>
              <input  matInput  placeholder="Description" name="description" id="product-description" ngModel
-             #description="ngModel" required>
+             #description="ngModel" id="productdescription" >
           </mat-form-field>
           <label class="full-width" for="product-image">
                <mat-icon>perm_media</mat-icon> Select Image
           </label>
           <mat-form-field class="full-width">
              <mat-label>Discount(%)</mat-label>
-             <input  matInput  placeholder="%" name="discount" id="product-discount" ngModel
-             #discount="ngModel" >
+             <input  matInput  placeholder="%" name="discount" id="product-discount"  ngModel
+             #discount="ngModel" id="productdiscount">
           </mat-form-field>
           <mat-form-field class="full-width">
             <mat-label>Available Location</mat-label>
             <input  matInput  placeholder="e.g. Dillibazar, Katmandu" name="availableLocation" id="product-available-location" ngModel
-            #availableLocation="ngModel">
+            #availableLocation="ngModel" id="productlocation">
          </mat-form-field>   
          <mat-form-field class="full-width">
             <mat-label>Manufactured Location</mat-label>
@@ -47,7 +47,7 @@
          <mat-form-field class="full-width">
             <mat-label>Quantity</mat-label>
             <input  matInput  placeholder="e.g. 1kg / 1ltr / 1 bundle" name="quantity" id="product-quantity" ngModel
-            #quantity="ngModel">
+            #quantity="ngModel" id="productquantity">
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Product Expire Data</mat-label>
@@ -79,7 +79,7 @@
                quantity,
                expiredata,
                uploadedBy,
-               imagename)" color="primary">Add for sales</button>
+               imagename)" color="primary" id="buttonadd">Add for sales</button>
           </mat-card-actions>
    </form>
  </mat-card>

@@ -1,31 +1,32 @@
-import { SignupPage } from './signup.po';
+import { Productpage } from './product.po';
 import { browser, logging } from 'protractor';
 
-describe('Go to Signup page', () => {
-  let page: SignupPage;
+describe('Go to add product page', () => {
+  let page: Productpage;
 
   beforeEach(() => {
-    page = new SignupPage();
+    page = new Productpage();
   });
 
-  it('When I am on signup page', () => {
+  it('When I on on product page', () => {
     page.navigateTo();
   });
 
   
-  it('When I enter username and password', () => {
-    page.setName();
+  it('When I enter name, category, unit,description, discount, location and quantity', () => {
     page.setUsername();
-    page.setEmail();
-    page.setPhone();
-    page.setLocation();
     page.setPassword();
-
+    page.setUnit();
+    page.setDes();
+    page.setDis();
+    page.setLoc();
+    page.setQuant();
+    
   });
 
   
-  it('Then  I should be signup', () => {
-    page.clickLogin();
+  it('Then product should be added', () => {
+    // page.clickBttt();
   });
 
   afterEach(async () => {
