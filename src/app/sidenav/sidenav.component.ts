@@ -9,18 +9,31 @@ import { ActivatedRoute } from '@angular/router';
 export class SidenavComponent implements OnInit {
 
   category: string;
-  cart:String;
-  
+  cart: String;
+  logged: Boolean;
+
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.category = params['category'];
     });
-    this.cart = JSON.parse(localStorage.getItem('cart'));
+    var a = JSON.parse(localStorage.getItem('cart'));
+    this.cart = a.length
     console.log(this.cart)
-   }
+  }
+
+  logOut() {
+    localStorage.setItem('success_login', '');
+    window.location.href = '/login';
+  }
 
   ngOnInit() {
-    
+    var log_state = localStorage.getItem('success_login');
+    console.log(log_state)
+    if (log_state != '') {
+      this.logged = true
+    } else if(log_state){
+      this.logged = false
+    }
   }
 
 }

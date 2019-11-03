@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class SignupPage {
-  test = browser.baseUrl + '/signup';
+  test = browser.baseUrl + 'signup';
   navigateTo() {
     return browser.get(this.test) as Promise<any>;
   }
@@ -16,7 +16,7 @@ export class SignupPage {
     return element(by.css('#password')).sendKeys('abcd');
   }
 
-  clickLogin(){
-    return element(by.css('#btn-login')).click();
-  }
+  // clickLogin(){
+  //   return element(by.css('#btn-login')).click();
+  // }
 } 

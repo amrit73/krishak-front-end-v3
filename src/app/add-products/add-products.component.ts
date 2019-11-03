@@ -9,16 +9,20 @@ import * as $ from 'jquery';
 })
 export class AddProductsComponent implements OnInit {
 
+  uid:String
+
+
   constructor() { }
 
   ngOnInit() {
+    this.uid=localStorage.getItem("uid");
   }
 
-  uploadStatus:boolean;
+  uploadStatus: boolean;
   imageUrl: string;
   fileToUpload: File = null;
   base_url = 'http://localhost:90/';
-  
+
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
     const reader = new FileReader();
@@ -26,7 +30,7 @@ export class AddProductsComponent implements OnInit {
       this.imageUrl = event.target.result;
     }
     reader.readAsDataURL(this.fileToUpload);
-    // $('#img').fadeIn(200);
+
     this.uploadImageToServer($('#product-image'));
   }
 
@@ -45,7 +49,7 @@ export class AddProductsComponent implements OnInit {
     if (fileSize > 10000000) {
       setTimeout(function () {
         alert('Image size exceeds');
-        this.uploadStatus=false;
+        this.uploadStatus = false;
       }, 2000);
     } else {
 
@@ -58,58 +62,49 @@ export class AddProductsComponent implements OnInit {
         data: formData,
         success(data) {
           console.log(data);
-          $('#image-name').val(data);
-        this.uploadStatus=true;
+          $('#image-name').val(data.Filename);
+          this.uploadStatus = true;
 
         },
         error() {
           alert('Upload failed');
-        this.uploadStatus=false;
+          this.uploadStatus = false;
 
         }
       });
     }
   }
 
-  onSubmitProduct(productname:any,
-    category:any,
-    pricePerUnit:any,
-    description:any,
-    discount:any,
-    availableLocation:any,
-    manufacturedLocation:any,
-    quantity:any,
-    expiredata:any,
-    uploadedBy:any,
-    imagename:any){
+  onSubmitProduct() {
     // let data=$('#aaa').val();
     // alert(data);
     // alert(category.value)
 
     let data= {
-      productName:productname.value,
-      productCategory:category.value,
-      pricePerUnit:pricePerUnit.value,
-      description:description.value,
-      image:imagename.value,
-      discount:discount.value,
-      availableLocation:availableLocation.value,
-      manufacturedLocation:manufacturedLocation.value,
-      quantity:quantity.value,
-      productExpireData:expiredata.value,
-      uploadedBy:uploadedBy.value      
+      productName:$('#product-name').val(),
+      productCategory:$('#product-category').val(),
+      pricePerUnit:$('#product-unit').val(),
+      description:$('#product-description').val(),
+      image:$('#image-name').val(),
+      discount:$('#product-discount').val(),
+      availableLocation:$('#product-available-location').val(),
+      manufacturedLocation:$('#product-manufactured-location').val(),
+      quantity:$('#product-quantity').val(),
+      productExpireData:$('#product-expire-data').val(),
+      uploadedBy:this.uid      
     }
+
 
     console.log(data)
 
-    if (!this.uploadStatus) {
+    if ($('#image-name').val()==='') {
       alert('Please try again!');
     }
-    else{
+    else {
       $.ajax({
         type: 'POST',
         url: this.base_url + 'addmyproduct',
-        data:data,
+        data: data,
         success: function () {
           alert('Success')
         },

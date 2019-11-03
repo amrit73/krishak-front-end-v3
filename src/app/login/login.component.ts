@@ -8,9 +8,12 @@ import * as $ from 'jquery';
 })
 export class LoginComponent implements OnInit {
 
+  logged:Boolean
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   getLoggedin(username: any, password: any) {
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
             alert('welcome');
             console.log(data)
             localStorage.setItem('success_login', data.token);
+            localStorage.setItem('uid', data.userid);
             var track = localStorage.getItem("last_track");
             if (track == 'carting') {
               window.location.href = '/cart';

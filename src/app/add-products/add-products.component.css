@@ -7,3 +7,12 @@
   .full-width {
     width: 100%;
   }
+
+  .mycard{
+    margin: 30px auto;
+    width: 50%;
+  }
+
+  #imagesContain{
+    visibility:collapse;
+  }

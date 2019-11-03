@@ -2,10 +2,10 @@
     <mat-drawer #drawer class="example-sidenav" mode="side" opened>
         <mat-toolbar class="dashboard-pannel-head">
             <h2>Krishak</h2>
-            <div class="sidenav-icon">
-                <mat-icon routerLink="/cart">shopping_cart
+            <div routerLink="/cart" class="sidenav-icon">
+                <mat-icon >shopping_cart
                 </mat-icon>
-                <!-- {{cart}} -->
+                {{cart}}
             </div>
         </mat-toolbar>
 
@@ -16,12 +16,17 @@
 
     <mat-toolbar class="nav-toolbar">
 
-        <p class="nav-toolbar">
-            <mat-icon>store</mat-icon>Bazzar
+        <p routerLink="/" class="nav-toolbar">
+            <mat-icon >store</mat-icon>Bazzar
         </p>
-        <a mat-list-item routerLink="/login">
+        <a *ngIf="!logged" mat-list-item routerLink="/login">
             <mat-icon>lock</mat-icon>
             Login
+        </a>
+
+        <a *ngIf="logged" mat-list-item (click)="logOut()">
+            <mat-icon>lock</mat-icon>
+            Logout
         </a>
     </mat-toolbar>
     <router-outlet></router-outlet>

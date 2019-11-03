@@ -4,7 +4,7 @@
              (change)="handleFileInput($event.target.files)" hidden/>
 </form>
 
-<mat-card-content>
+<mat-card class="mycard">
    <form class="my-form">
       <mat-form-field class="full-width">
              <mat-label>Product Name</mat-label>
@@ -56,15 +56,15 @@
             <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #myDatepicker id="myDatepicker"></mat-datepicker>
          </mat-form-field>
-         <mat-form-field class="full-width">
+         <!-- <mat-form-field class="full-width">
             <mat-label>Uploaded By</mat-label>
             <input  matInput  placeholder="uploadedBy" name="uploadedBy" id="product-uploaded-by" ngModel
-            #uploadedBy="ngModel">
-         </mat-form-field>
+            #uploadedBy="ngModel" hidden>
+         </mat-form-field> -->
 
-         <mat-form-field class="full-width">
+         <mat-form-field class="full-width" id="imagesContain">
             <input  matInput  placeholder="image-name" name="image-name" id="image-name" ngModel
-            #imagename="ngModel">
+            #imagename="ngModel" >
          </mat-form-field>
 
          <mat-card-actions >
@@ -82,5 +82,5 @@
                imagename)" color="primary">Add for sales</button>
           </mat-card-actions>
    </form>
- </mat-card-content>
+ </mat-card>
 

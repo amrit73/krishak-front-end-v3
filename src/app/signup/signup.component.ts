@@ -56,6 +56,7 @@ registerUser(name: any,username: any,email: any,phone: any,location: any,company
         data:data,
         success: function () {
           alert('Success')
+          window.location.href = '/login';
         },
         error: function () {
           alert('error')
