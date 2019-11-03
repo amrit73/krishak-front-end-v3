@@ -24,11 +24,6 @@ const routes: Routes = [
     component: CartComponent
   },
   {
-    path:'items',
-    component:ProductsComponent
-  },
-  {
-    
     path: 'signup',
     component: SignupComponent
   },

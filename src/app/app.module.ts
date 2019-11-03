@@ -36,6 +36,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 
 
+
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -82,6 +83,7 @@ import { FilteredproductsComponent } from './filteredproducts/filteredproducts.c
     FormsModule,                               
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     ReactiveFormsModule ,
