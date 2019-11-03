@@ -17,8 +17,12 @@ export class SidenavComponent implements OnInit {
       this.category = params['category'];
     });
     var a = JSON.parse(localStorage.getItem('cart'));
-    this.cart = a.length
-    console.log(this.cart)
+    if (a) {
+      this.cart = a.length
+    }
+    else {
+      this.cart = "0";
+    }
   }
 
   logOut() {
@@ -31,7 +35,7 @@ export class SidenavComponent implements OnInit {
     console.log(log_state)
     if (log_state != '') {
       this.logged = true
-    } else if(log_state){
+    } else if (log_state) {
       this.logged = false
     }
   }

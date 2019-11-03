@@ -16,7 +16,7 @@ export class LoginPage {
     return element(by.css('#password')).sendKeys('abcd');
   }
 
-  // clickLogin(){
-  //   return element(by.css('#btn-login')).click();
-  // }
+  clickLogin(){
+    return element(by.css('#btn-login')).click();
+  }
 } 

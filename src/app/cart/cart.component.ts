@@ -87,7 +87,7 @@ export class CartComponent implements OnInit {
     this.total = 0;
     this.items = [];
     let cart = JSON.parse(localStorage.getItem('cart'));
-
+if(cart){
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
       console.log(item.product[0].pricePerUnit)
@@ -97,6 +97,7 @@ export class CartComponent implements OnInit {
       });
       this.total += parseInt(item.product[0].pricePerUnit) * parseInt(item.quantity);
     }
+  }
 
   }
 
