@@ -3,7 +3,7 @@
         <mat-toolbar class="dashboard-pannel-head">
             <h2>Krishak</h2>
             <div routerLink="/cart" class="sidenav-icon">
-                <mat-icon >shopping_cart
+                <mat-icon>shopping_cart
                 </mat-icon>
                 {{cart}}
             </div>
@@ -17,11 +17,14 @@
     <mat-toolbar class="nav-toolbar">
 
         <p routerLink="/" class="nav-toolbar">
-            <mat-icon >store</mat-icon>Bazzar
+            <mat-icon>store</mat-icon>Bazzar
         </p>
         <a *ngIf="!logged" mat-list-item routerLink="/login">
             <mat-icon>lock</mat-icon>
             Login
+        </a>
+        <a *ngIf="logged" mat-list-item routerLink="/profile">
+            <mat-icon>person</mat-icon>
         </a>
 
         <a *ngIf="logged" mat-list-item (click)="logOut()">

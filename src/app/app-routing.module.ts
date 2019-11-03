@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path:'additems',
     component:AddProductsComponent
+  },
+  {
+    path:'profile',
+    component:ProfileComponent
   },
   {
     path:'list/:id',

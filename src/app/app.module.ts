@@ -41,6 +41,7 @@ import { CartComponent } from './cart/cart.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CartComponent,
     CategoriesComponent,
     FilteredproductsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
