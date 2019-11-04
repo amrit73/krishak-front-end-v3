@@ -34,6 +34,10 @@ export class ProductsComponent implements OnInit {
 
 
   ngOnInit() {
+    var loctok = localStorage.getItem('success_login');
+    if(!loctok){
+      window.location.href="/login"
+    }
     return this.productService.getData().subscribe((data: any[])=>{
       this.dataSource=data[0].data;
       console.log(this.dataSource)

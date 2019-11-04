@@ -14,6 +14,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     var loctok = localStorage.getItem('success_login');
+    if(!loctok){
+      window.location.href="/login"
+    }
     return this.profileServe.getData(loctok).subscribe((data: any[]) => {
       this.dataso = data;
       console.log(data)

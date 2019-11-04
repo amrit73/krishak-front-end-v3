@@ -15,6 +15,10 @@ export class AddProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var loctok = localStorage.getItem('success_login');
+    if(!loctok){
+      window.location.href="/login"
+    }
     this.uid=localStorage.getItem("uid");
   }
 

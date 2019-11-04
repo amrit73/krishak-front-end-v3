@@ -4,7 +4,7 @@
         <mat-grid-tile id="card-container" *ngFor="let product of products">
             
                 <mat-card class="card-style">
-                    <img class="product-image" src="{{product.image}}" alt="image" />
+                    <img class="product-image" src="http://localhost:90/images/{{product.image}}" alt="image" />
                     <p>
                         <mat-icon>my_location</mat-icon>{{product.availableLocation}}
                     </p>
