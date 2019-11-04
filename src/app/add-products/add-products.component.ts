@@ -85,15 +85,15 @@ export class AddProductsComponent implements OnInit {
     // alert(category.value)
 
     let data= {
-      productName:$('#product-name').val(),
-      productCategory:$('#product-category').val(),
-      pricePerUnit:$('#product-unit').val(),
-      description:$('#product-description').val(),
+      productName:$('#productnamee').val(),
+      productCategory:$('#productcategory').val(),
+      pricePerUnit:$('#productunit').val(),
+      description:$('#productdescription').val(),
       image:$('#image-name').val(),
-      discount:$('#product-discount').val(),
-      availableLocation:$('#product-available-location').val(),
+      discount:$('#productdiscount').val(),
+      availableLocation:$('#productlocation').val(),
       manufacturedLocation:$('#product-manufactured-location').val(),
-      quantity:$('#product-quantity').val(),
+      quantity:$('#productquantity').val(),
       productExpireData:$('#product-expire-data').val(),
       uploadedBy:this.uid      
     }
