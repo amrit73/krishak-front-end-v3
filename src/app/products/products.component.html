@@ -3,7 +3,7 @@
     <mat-form-field class="w-100">
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
     </mat-form-field>
-    <button routerLink="/additems" mat-fab>+ Add</button>
+    <button routerLink="/admin/additems" mat-fab>+ Add</button>
 
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" class="w-100">
       <ng-container matColumnDef="productName">
@@ -57,19 +57,19 @@
       </ng-container>
 
 
-      <ng-container matColumnDef="image">
+      <ng-container matColumnDef="image" c>
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
         <td mat-cell *matCellDef="let element" style="width: 25%"><img
-            [src]="'http://localhost:90/images/'+element.image" class="w-100 img-fluid img-thumbnail">
+            [src]="'http://localhost:90/images/'+element.image" class="prodImg">
         </td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions</th>
         <td mat-cell *matCellDef="let element">
-          <button class="btn btn-danger" (click)="deleteById(element._id,element.image)"><i class="fa fa-trash"></i>
-            Delete
-          </button>
+          
+            <mat-icon class="delBtn" (click)="deleteById(element._id,element.image)">delete</mat-icon>
+          
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -8,7 +8,8 @@ import { Item } from '../item.entity';
 import { ProductsService } from '../products.service';
 
 @Component({
-  templateUrl: 'cart.component.html'
+  templateUrl: 'cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
 
 export class CartComponent implements OnInit {

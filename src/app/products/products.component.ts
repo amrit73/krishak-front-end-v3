@@ -65,6 +65,7 @@ export class ProductsComponent implements OnInit {
         },
         success(data) {
          alert('Item deleted');
+         window.location.href="/admin/items"
         },
         error() {
 

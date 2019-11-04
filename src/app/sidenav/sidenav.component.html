@@ -9,22 +9,28 @@
             </div>
         </mat-toolbar>
 
-        <app-categories [category]='category'></app-categories>
-
+        <app-categories *ngIf="!productroute" [category]='category'></app-categories>
+        <mat-nav-list *ngIf="productroute">
+            <a class="nav-menu-items" mat-list-item routerLink="/admin/items">My Products</a>
+            <a class="nav-menu-items" mat-list-item routerLink="/admin/additems">Add Products</a>
+        </mat-nav-list>
     </mat-drawer>
 
 
     <mat-toolbar class="nav-toolbar">
 
-        <p routerLink="/" class="nav-toolbar">
-            <mat-icon>store</mat-icon>Bazzar
+        <p class="nav-toolbar">
+            <a href="/">
+                <mat-icon>store</mat-icon>Bazzar
+            </a>
         </p>
         <a *ngIf="!logged" mat-list-item routerLink="/login">
             <mat-icon>lock</mat-icon>
             Login
         </a>
-        <a *ngIf="logged" mat-list-item routerLink="/profile">
+        <a *ngIf="logged" mat-list-item href="/admin/profile">
             <mat-icon>person</mat-icon>
+            My Profile
         </a>
 
         <a *ngIf="logged" mat-list-item (click)="logOut()">

@@ -111,6 +111,7 @@ export class AddProductsComponent implements OnInit {
         data: data,
         success: function () {
           alert('Success')
+          window.location.href="/admin/items"
         },
         error: function () {
           alert('error')

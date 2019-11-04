@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             if (track == 'carting') {
               window.location.href = '/cart';
             } else {
-              window.location.href = '/items';
+              window.location.href = '/admin/items';
             }
           }
           else {

@@ -33,15 +33,15 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'items',
+    path: 'admin/items',
     component: ProductsComponent
   },
   {
-    path:'additems',
+    path:'admin/additems',
     component:AddProductsComponent
   },
   {
-    path:'profile',
+    path:'admin/profile',
     component:ProfileComponent
   },
   {

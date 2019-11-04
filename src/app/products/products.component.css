@@ -3,3 +3,11 @@
     /* width: 80%; */
     margin: 10px;
 }
+.prodImg{
+    width: 100%;
+}
+
+.delBtn{
+    cursor: pointer;
+    color: red;
+}

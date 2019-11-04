@@ -11,6 +11,7 @@ export class SidenavComponent implements OnInit {
   category: string;
   cart: String;
   logged: Boolean;
+  productroute: Boolean;
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -37,6 +38,12 @@ export class SidenavComponent implements OnInit {
       this.logged = true
     } else if (log_state) {
       this.logged = false
+    }
+    var route = window.location.href
+    if (route.match('admin') && log_state != '') {
+      this.productroute = true
+    } else {
+      this.productroute = false
     }
   }
 

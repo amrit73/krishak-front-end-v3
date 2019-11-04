@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   constructor(private profileServe: ProfileService) { }
 
   ngOnInit() {
+    
     var loctok = localStorage.getItem('success_login');
     if(!loctok){
       window.location.href="/login"
