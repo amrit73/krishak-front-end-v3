@@ -10,6 +10,7 @@ import { FilteredproductsComponent } from './filteredproducts/filteredproducts.c
 import { AddProductsComponent } from './add-products/add-products.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OrderedComponent } from './ordered/ordered.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path:'admin/additems',
     component:AddProductsComponent
+  },
+  {
+    path:'admin/ordered',
+    component:OrderedComponent
   },
   {
     path:'admin/profile',

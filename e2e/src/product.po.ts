@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class Productpage {
-  test = browser.baseUrl + '/additems';
+  test = browser.baseUrl + '/admin/additems';
   navigateTo() {
     return browser.get(this.test) as Promise<any>;
   }
@@ -9,7 +9,7 @@ export class Productpage {
   
 
   setUsername() {
-    return element(by.css('#productnamee')).sendKeys('syau');
+    return element(by.css('#productname')).sendKeys('syau');
   }
 
   setPassword(){

@@ -8,7 +8,7 @@ describe('Go to login page', () => {
     page = new LoginPage();
   });
 
-  it('When I on on login page', () => {
+  it('Given I am on login page', () => {
     page.navigateTo();
   });
 

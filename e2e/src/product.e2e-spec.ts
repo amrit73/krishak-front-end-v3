@@ -8,7 +8,7 @@ describe('Go to add product page', () => {
     page = new Productpage();
   });
 
-  it('When I on on product page', () => {
+  it('Given I am on product page', () => {
     page.navigateTo();
   });
 

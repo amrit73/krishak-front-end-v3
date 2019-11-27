@@ -8,11 +8,11 @@ import { Item } from '../item.entity';
 import { ProductsService } from '../products.service';
 
 @Component({
-  templateUrl: 'cart.component.html',
-  styleUrls: ['./cart.component.css']
+  templateUrl: 'Ordered.component.html',
+  styleUrls: ['./Ordered.component.css']
 })
 
-export class CartComponent implements OnInit {
+export class OrderedComponent implements OnInit {
 
   private items: Item[] = [];
   private total: number = 0;
@@ -21,14 +21,14 @@ export class CartComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductsService
-  ) {
+  ) { 
 
   }
 
 
 
   ngOnInit() {
-    localStorage.setItem("last_track", "");
+    localStorage.setItem("last_track","");
     this.activatedRoute.params.subscribe(params => {
       var id = params['id'];
 
@@ -44,7 +44,7 @@ export class CartComponent implements OnInit {
               product: this.prod,
               quantity: 1
             };
-
+            
             if (localStorage.getItem('cart') == null) {
               console.log(item)
               let cart: any = [];
@@ -88,17 +88,17 @@ export class CartComponent implements OnInit {
     this.total = 0;
     this.items = [];
     let cart = JSON.parse(localStorage.getItem('cart'));
-    if (cart) {
-      for (var i = 0; i < cart.length; i++) {
-        let item = JSON.parse(cart[i]);
-        console.log(item.product[0].pricePerUnit)
-        this.items.push({
-          product: item.product[0],
-          quantity: item.quantity
-        });
-        this.total += parseInt(item.product[0].pricePerUnit) * parseInt(item.quantity);
-      }
+if(cart){
+    for (var i = 0; i < cart.length; i++) {
+      let item = JSON.parse(cart[i]);
+      console.log(item.product[0].pricePerUnit)
+      this.items.push({
+        product: item.product[0],
+        quantity: item.quantity
+      });
+      this.total += parseInt(item.product[0].pricePerUnit) * parseInt(item.quantity);
     }
+  }
 
   }
 
@@ -116,15 +116,12 @@ export class CartComponent implements OnInit {
     this.loadCart();
   }
 
-  checkout() {
+  checkout(){
     var token = localStorage.getItem("success_login");
-    var storeOur = localStorage.getItem("cart");
-    var storeUser = localStorage.getItem("uid");
-    if (token) {
-      
+    if(token){
       window.location.href = '/checkout';
-    } else {
-      localStorage.setItem("last_track", "carting");
+    }else{
+      localStorage.setItem("last_track","carting");
       window.location.href = '/login';
     }
   }

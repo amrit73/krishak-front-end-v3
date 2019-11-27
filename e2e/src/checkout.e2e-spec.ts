@@ -8,7 +8,7 @@ describe('Go to Checkout page', () => {
     page = new CheckoutPage();
   });
 
-  it('When I go on checkout page', () => {
+  it('Given I am on checkout page', () => {
     page.navigateTo();
   });
 

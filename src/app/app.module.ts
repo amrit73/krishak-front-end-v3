@@ -42,6 +42,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { FilteredproductsComponent } from './filteredproducts/filteredproducts.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OrderedComponent } from './ordered/ordered.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { ProfileComponent } from './profile/profile.component';
     CategoriesComponent,
     FilteredproductsComponent,
     CheckoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    OrderedComponent
   ],
   imports: [
     BrowserModule,

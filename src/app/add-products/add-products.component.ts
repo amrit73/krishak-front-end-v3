@@ -117,6 +117,17 @@ export class AddProductsComponent implements OnInit {
           alert('error')
         }
       });
+      $.ajax({
+        type: 'POST',
+        url: this.base_url + 'addcategory',
+        data: data,
+        success: function () {
+          console.log('Success cats')
+        },
+        error: function () {
+          alert('error')
+        }
+      });
     }
 
   }
